@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f6f1a17de084998be624b6f3410a8e, type: 3}
+  m_Name: DamgeReductionCommon
+  m_EditorClassIdentifier: 
+  background: {fileID: 21300000, guid: 611c17c5293dd00438127062e1b9b3d0, type: 3}
+  icon: {fileID: 21300000, guid: c1a438de2a47b42fc844b410166f6e99, type: 3}
+  description: DAMAGE REDUCTION +10%
+  upgradeType: 6
+  rarity: 0
+  cost: 100
+  numberOfUses: 0
+  timesSelected: 0
+  upgradeEvent: {fileID: 11400000, guid: 79a6fe5de4a864e2f8b79ca8003e4447, type: 2}

@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply from: '../shared/keepUnitySymbols.gradle'
+**APPLY_PLUGINS**
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+// Android Resolver Dependencies Start
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Analytics:4.8.0.0.2' // Assets/Editor/TTPDependencies.xml:21
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_AppsFlyer:4.8.0.1.1' // Assets/Editor/TTPDependencies.xml:18
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Core:4.8.0.1.11' // Assets/Editor/TTPDependencies.xml:16
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_CrashTool:4.7.0.650.1' // Assets/Editor/TTPDependencies.xml:19
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_FirebaseAgent:4.8.0.0.2' // Assets/Editor/TTPDependencies.xml:22
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Privacy_Settings:4.8.0.0.1' // Assets/Editor/TTPDependencies.xml:20
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Remote_Config:4.7.0.650.1' // Assets/Editor/TTPDependencies.xml:23
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Unity:4.7.0.650.1' // Assets/Editor/TTPDependencies.xml:17
+// Android Resolver Dependencies End
+**DEPS**}
+
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    namespace "com.unity3d.player"
+    ndkPath "**NDKPATH**"
+    ndkVersion "**NDKVERSION**"
+
+    compileSdk **APIVERSION**
+    buildToolsVersion = "**BUILDTOOLS**"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdk **MINSDK**
+        targetSdk **TARGETSDK**
+        ndk {
+            abiFilters **ABIFILTERS**
+            debugSymbolLevel **DEBUGSYMBOLLEVEL**
+        }
+        versionCode **VERSIONCODE**
+        versionName '**VERSIONNAME**'
+        consumerProguardFiles 'proguard-unity.txt'**USER_PROGUARD**
+**DEFAULT_CONFIG_SETUP**
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**PACKAGING**
+
+        subprojects {
+        afterEvaluate { project ->
+            if (project.hasProperty('android')) {
+                project.android {
+                    if (namespace == null) {
+                        namespace "com.crazylabs.ttplugins"
+                    }
+                }
+            }
+        }
+    }
+}
+**IL_CPP_BUILD_SETUP**
+**SOURCE_BUILD_SETUP**
+**EXTERNAL_SOURCES**

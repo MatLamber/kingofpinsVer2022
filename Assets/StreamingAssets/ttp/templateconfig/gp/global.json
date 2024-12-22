@@ -1,0 +1,19 @@
+{
+  "store": "google",
+  "gameEngine": "unity",
+  "audienceModeBuildOnly": "non-children",
+  "orientation": "portrait",
+  "geoLocationServer": "ttplugins.ttpsdk.info",
+  "bundleId": "play.roshka.kingofpins",
+  "testMode": false,
+  "askForTracking": true,
+  "isAdMob": true,
+  "appBuildConfig": {
+    "admob": {
+      "application": ""
+    }
+  },
+  "facebook": {
+    "metaAppId": "1265583691221109"
+  }
+}
