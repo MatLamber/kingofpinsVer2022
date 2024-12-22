@@ -1920,7 +1920,7 @@ public class CLIKConfiguration : EditorWindow
     
     public static bool Configure(string zipPath)
     {
-        //IOSResolver.PodToolExecutionViaShellEnabled = false;
+        IOSResolver.PodToolExecutionViaShellEnabled = false;
         if (string.IsNullOrEmpty(zipPath))
         {
             Debug.LogError("Configure:: Zip does not exist at path - " + zipPath);
@@ -2443,7 +2443,7 @@ public class CLIKConfiguration : EditorWindow
         string resStr = null;
         if (!IsAndroid())
         {
-            //IOSResolver.PodToolExecutionViaShellEnabled = false;
+            IOSResolver.PodToolExecutionViaShellEnabled = false;
         }
         
         if (TTPEditorUtils.DownloadStringToFile(url, "Assets/StreamingAssets/clik-packages.json", out resStr))
@@ -2990,7 +2990,7 @@ public class CLIKConfiguration : EditorWindow
                     isAdmob = globalConfig.isAdMob;
                 }
                 Debug.Log("CLIKConfiguration::OnPreprocessBuild:isAdmob=" + isAdmob);
-                //IOSResolver.PodfileStaticLinkFrameworks = false;
+                IOSResolver.PodfileStaticLinkFrameworks = false;
                 CreatePodDependencies(isAdmob, analyticsConfig.firebaseEchoMode);
             }
 
