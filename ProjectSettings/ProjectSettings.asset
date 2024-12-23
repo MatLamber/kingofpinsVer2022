@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: 'Roshka Studios '
+  companyName: 'RoshkaStudios '
   productName: King of Pins
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -975,7 +975,7 @@ PlayerSettings:
   cloudProjectId: 7527cae9-48ae-44e2-92a3-69f572d10136
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: KingOfPins2022
   organizationId: matlamber
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
